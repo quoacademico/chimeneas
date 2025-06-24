@@ -405,3 +405,11 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 *.ps1
+
+
+# Ignore common system files
+**/.DS_Store
+# Thumbnails
+**/Thumbs.db
+
+website/.angular/cache

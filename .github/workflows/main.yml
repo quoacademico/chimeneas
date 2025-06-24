@@ -1,0 +1,26 @@
+name: 🚀 Deploy Chimeneas a Producción
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: 📦 Deploy FTP Chimeneas
+    runs-on: ubuntu-latest
+    environment:
+      name: develop
+      url: https://dev-240625.chimeneasindustrialesvillasenor.com.mx
+
+    steps:
+      - name: 🔍 Checkout del código
+        uses: actions/checkout@v3
+
+      - name: 📂 Subir por FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ${{ secrets.FTP_SERVER_CHIMENEAS }}
+          username: ${{ secrets.FTP_USERNAME_CHIMENEAS }}
+          password: ${{ secrets.FTP_PASSWORD_CHIMENEAS }}
+          server-dir: /  # ajusta la ruta en tu servidor si es necesario
