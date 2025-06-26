@@ -22,13 +22,13 @@ jobs:
         with:
           node-version: '20'
 
-      - name: 📅 Instalar dependencias
+      - name: 📥 Instalar dependencias
         run: npm ci
-        working-directory: chimeneas/website
+        working-directory: website
 
-      - name: 🔨 Compilar Angular (output a deploy/dev)
-        run: npm run build -- --output-path=../../chimeneas/deploy/dev --configuration=production
-        working-directory: chimeneas/website
+      - name: 🛠️ Compilar Angular (output a deploy/dev)
+        run: npm run build -- --output-path=../deploy/dev --configuration=production
+        working-directory: website
 
       - name: 📂 Subir por FTP (solo deploy/dev)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -36,5 +36,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER_CHIMENEAS }}
           username: ${{ secrets.FTP_USERNAME_CHIMENEAS }}
           password: ${{ secrets.FTP_PASSWORD_CHIMENEAS }}
-          local-dir: chimeneas/deploy/dev
+          local-dir: deploy/dev
           server-dir: /
