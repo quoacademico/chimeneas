@@ -24,11 +24,11 @@ jobs:
 
       - name: 📥 Instalar dependencias
         run: npm ci
-        working-directory: ../website
+        working-directory: website
 
       - name: 🛠️ Compilar Angular (output a deploy/dev)
         run: npm run build -- --output-path=../deploy/dev --configuration=production
-        working-directory: ../website
+        working-directory: website
 
       - name: 📂 Subir por FTP (solo deploy/dev)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
