@@ -17,10 +17,24 @@ jobs:
       - name: 🔍 Checkout del código
         uses: actions/checkout@v3
 
-      - name: 📂 Subir por FTP
+      - name: 📦 Instalar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: 📥 Instalar dependencias
+        run: npm ci
+        working-directory: ./website
+
+      - name: 🛠️ Compilar Angular (output a deploy/dev)
+        run: npm run build -- --output-path=../deploy/dev --configuration=production
+        working-directory: ./website
+
+      - name: 📂 Subir por FTP (solo deploy/dev)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER_CHIMENEAS }}
           username: ${{ secrets.FTP_USERNAME_CHIMENEAS }}
           password: ${{ secrets.FTP_PASSWORD_CHIMENEAS }}
-          server-dir: /  # ajusta la ruta en tu servidor si es necesario
+          local-dir: ./deploy/dev
+          server-dir: /
