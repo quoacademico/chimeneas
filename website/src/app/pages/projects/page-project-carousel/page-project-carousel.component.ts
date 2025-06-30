@@ -13,7 +13,7 @@ export class PageProjectCarouselComponent implements OnInit {
   }
 
   banner = {
-    image: "assets/images/banner/3.jpg",
+    image: "assets/images/banner/Banner1.jpg",
     title: "Carousel All Type",
     description: "The essence of interior design will always be about people and how they live. It is about the realities of what makes for an attractive, civilized.",
     page: "Project-Carousel"

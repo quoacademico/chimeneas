@@ -18,9 +18,9 @@ export class Home1Component implements OnInit {
   }
 
   about = {
-    title: "About us",
-    subtitle: "We are competitive in architecture solutions",
-    description: "Landscape design is a process of developing practical and pleasing outdoor living space. there are six principles of design that have been used by artists for centuries throughout all art forms, painting and floral design.",
+    title: "Acerca de Nosotros",
+    subtitle: "Productos de alta calidad",
+    description: "Somos una empresa dedicada a la fabricación de chimeneas industriales, con más de 20 años de experiencia en el mercado. Nos especializamos en ofrecer productos de alta calidad y un servicio al cliente excepcional.",
     images: [
       {
         image: "assets/images/about-slider/1.jpg"
