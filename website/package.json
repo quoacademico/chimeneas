@@ -5,8 +5,12 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --configuration production",
+    "build:dev": "ng build --configuration development",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy:dev": "ng build --configuration development && xcopy /E /Y dist\\inteshape\\* ..\\deploy\\dev\\",
+    "deploy:prod": "ng build --configuration production && xcopy /E /Y dist\\inteshape\\* ..\\deploy\\prod\\"
   },
   "private": true,
   "dependencies": {

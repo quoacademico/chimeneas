@@ -20,7 +20,7 @@ export class Home1Component implements OnInit {
   about = {
     title: "Acerca de Nosotros",
     subtitle: "Productos de alta calidad",
-    description: "Somos una empresa dedicada a la fabricación de chimeneas industriales, con más de 20 años de experiencia en el mercado. Nos especializamos en ofrecer productos de alta calidad y un servicio al cliente excepcional.",
+    description: "Somos una empresa dedicada a la fabricación de chimeneas industriales, con más de 60 años de experiencia en el mercado. Nos especializamos en ofrecer productos de alta calidad y un servicio al cliente excepcional.",
     images: [
       {
         image: "assets/images/about-slider/1.jpg"
@@ -36,6 +36,12 @@ export class Home1Component implements OnInit {
       },
       {
         image: "assets/images/about-slider/5.jpg"
+      },
+      {
+        image: "assets/images/about-slider/6.jpg"
+      },
+      {
+        image: "assets/images/about-slider/8.jpg"
       }
     ]
   }
